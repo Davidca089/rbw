@@ -723,6 +723,9 @@ impl Client {
             )?)
         } else {
             Ok(reqwest::Client::new())
+            Ok(reqwest::Client::builder()
+                 .user_agent("Bitwarden/2024.3.1 (25)")
+                 .build().unwrap())
         }
     }
 
